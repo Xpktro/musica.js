@@ -1,4 +1,4 @@
-function majorScale() {
+function minorScale() {
   var        context = getAudioContext()
   ,      currentTime = audioContext.currentTime
   ,         duration = 1
@@ -13,7 +13,7 @@ function majorScale() {
 
   var           TONE = 2
   ,         SEMITONE = 1
-  ,            scale = [TONE, TONE, SEMITONE, TONE, TONE, TONE, SEMITONE]
+  ,            scale = [TONE, SEMITONE, TONE, TONE, SEMITONE, TONE, TONE]
   , currentFrequency = 0
   , scaleFrequencies = [frequencies[0]];
 
@@ -37,5 +37,5 @@ function majorScale() {
     };
   });
 
-  log('Playing major scale...');
+  log('Playing minor scale...');
 }
