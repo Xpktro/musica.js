@@ -24,8 +24,8 @@ h4 {
 
 .logs {
   position: absolute;
-  top:0;
-  right:0;
+  top: 1em;
+  right: 2em;
 }
 
 .logs-text {
