@@ -1,7 +1,7 @@
-function thirds() {
+function chord() {
   var        context = getAudioContext()
   ,      currentTime = audioContext.currentTime
-  ,         duration = 1
+  ,         duration = 3
   , twelfthRootOfTwo = Math.pow(2, 1/12)
   , currentFrequency = 220
   ,      frequencies = [currentFrequency];
@@ -23,20 +23,23 @@ function thirds() {
     notes.push(frequencies[currentFrequency]);
   }
 
-  notes.forEach(function(frequency, index) {
+  var logs = [];
+  notes.forEach(function(frequency, index, arr) {
     var sineosc = context.createOscillator()
-    , startTime = currentTime + (index * duration);
+    , startTime = currentTime;
     sineosc.type = 'sine';
     sineosc.frequency.value = frequency;
     sineosc.connect(context.destination);
     sineosc.start(startTime);
     sineosc.stop(startTime + duration);
     sineosc.onended = function(){
-      log('Finished ' + frequency.toFixed(2) + 'Hz tone.');
-      if(index == notes.length - 1)
+      logs.push('Finished ' + frequency.toFixed(2) + 'Hz tone.');
+      if(logs.length > 2) {
+        log(logs.join('\n'));
         log('---');
+      }
     };
   });
 
-  log('Playing thirds...');
+  log('Playing chord...');
 }
