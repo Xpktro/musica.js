@@ -20,7 +20,7 @@ function minorScale() {
   scale.forEach(function (interval) {
     currentFrequency += interval;
     scaleFrequencies.push(frequencies[currentFrequency]);
-  })
+  });
 
   scaleFrequencies.forEach(function(frequency, index) {
     var sineosc = context.createOscillator()
