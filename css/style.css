@@ -12,6 +12,7 @@ button {
   margin: .5em 2em;
   padding: 1em 2em;
   color: white;
+  cursor: pointer;
 }
 
 h3 {
@@ -23,13 +24,18 @@ h4 {
 }
 
 .logs {
-  position: absolute;
+  position: fixed;
   top: 1em;
   right: 2em;
 }
 
 .logs-text {
-  max-height: 10em;
+  max-height: 15em;
   width: 25em;
-  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.logs-text-presentation {
+  max-height: 5em;
 }
