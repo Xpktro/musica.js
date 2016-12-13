@@ -24,7 +24,7 @@ function chord() {
   }
 
   var logs = [];
-  notes.forEach(function(frequency, index, arr) {
+  notes.forEach(function(frequency, index) {
     var sineosc = context.createOscillator()
     , startTime = currentTime;
     sineosc.type = 'sine';
