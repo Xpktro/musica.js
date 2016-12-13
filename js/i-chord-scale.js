@@ -53,5 +53,5 @@ function chordScale() {
     });
   });
 
-  log('Playing chords...');
+  log('Playing chord scale...');
 }

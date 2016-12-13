@@ -56,5 +56,5 @@ function chordProgression() {
     });
   });
 
-  log('Playing chords...');
+  log('Playing chord progression...');
 }
