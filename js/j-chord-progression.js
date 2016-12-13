@@ -1,7 +1,7 @@
-function chordScale() {
+function chordProgression() {
   var        context = getAudioContext()
   ,      currentTime = audioContext.currentTime
-  ,         duration = 1
+  ,         duration = 2
   , twelfthRootOfTwo = Math.pow(2, 1/12)
   , currentFrequency = 220
   ,      frequencies = [currentFrequency];
@@ -33,7 +33,10 @@ function chordScale() {
     scale.push(scale.shift());
   }
 
-  chords.forEach(function(chord, index) {
+  var I = 0, II = 1, III = 2, IV = 3, V = 4, VI = 5, VII = 6, VIII = 7
+  , songChords = [chords[I], chords[V], chords[VI], chords[IV], chords[I]];
+
+  songChords.forEach(function(chord, index) {
     var logs = [];
     chord.forEach(function(frequency) {
       var sineosc = context.createOscillator()
